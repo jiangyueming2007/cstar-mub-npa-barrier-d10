@@ -63,7 +63,7 @@ Noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / traci
 
 \section{Introduction}
 
-Two orthonormal bases $B_a, B_b$ of $\C^d$ are \emph{mutually unbiased} (MUBs) if $|\langle u | v \rangle|^2 = 1/d$ for all $u \in B_a, v \in B_b$. While prime-power dimensions $d = p^r$ achieve the tight upper bound $N(d) = d + 1$, composite dimensions have resisted general classification for over four decades~\cite{McNultyWeigert2026}. Following a series of 2026 breakthroughs resolving the smallest composite dimension $d = 6$ as $N(6) = 3$ via computer-assisted proofs and topological/interval-arithmetic classification of order-6 complex Hadamard matrices~\cite{OpenAI2026,CardenesWuttigTindall2026,Jaswal2026}, dimension $d = 10$ ($3 \le N(10) \le 11$) now stands as the smallest unresolved composite dimension.
+Two orthonormal bases $B_a, B_b$ of $\C^d$ are \emph{mutually unbiased} (MUBs) if $|\langle u | v \rangle|^2 = 1/d$ for all $u \in B_a, v \in B_b$. While prime-power dimensions $d = p^r$ achieve the tight upper bound $N(d) = d + 1$, composite dimensions have resisted general classification for over four decades~\cite{McNultyWeigert2026}. Following a series of 2026 breakthroughs resolving the smallest composite dimension $d = 6$ as $N(6) = 3$ via computer-assisted proofs and topological/interval-arithmetic classification of order-6 complex Hadamard matrices~\cite{OpenAI2026,CardenesWuttigTindall2026,Jaswal2026}, dimension $d = 10$ ($3 \le N(10) \le 11$) now stands as the smallest unresolved composite dimension, where recent work by Yang et al.~\cite{YangEtAl2026} ruled out 4-MUBs containing the Fourier pair $\{I, F_{10}\}$ or three product bases.
 
 A promising dimension-general strategy casts MUB existence into a $C^*$-algebraic feasibility problem solved via noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / tracial SDP hierarchy), notably refined with $S_d \wr S_m$ wreath-product symmetry reduction by Gribling and Polak~\cite{GriblingPolak2024} (who obtained SOS refutations of $d+2$ MUBs for $d \le 8$ while reporting numerical evidence of a degree-12 barrier on $d=6$) and commuting polynomial relaxations by Mortimer~\cite{Mortimer2025}.
 
@@ -147,8 +147,8 @@ Gribling and Polak~\cite{GriblingPolak2024} (Definition~3.1) formulate the $(d,m
 
 \begin{table}[h]
 \centering
-\small
-\begin{tabular}{@{}llll@{}}
+\footnotesize
+\begin{tabular}{@{}lll>{\raggedright\arraybackslash}p{5.8cm}@{}}
 \toprule
 GP Def.\ 3.1 Item & Relation & Rank-2 Quat Model & Zero-Float Audit \& Exact Scope \\
 \midrule
@@ -204,7 +204,11 @@ For any rank-1 complex $m$-MUB in $\C^d$, the conjugate two-copy projectors $R_{
 \end{proposition}
 
 \begin{proposition}[Degree-3 Bargmann Saturation Defect, Parseval--Cocycle Gap, \& $\HH^d \to \C^d$ Homotopy Mass Gap]
-For any tracial MUB model, Cauchy--Schwarz yields $S_3(a,b,c) := d^2 \sum_{u,v,w} |\tau(P_{a,u} P_{b,v} P_{c,w})|^2 \le 1$, with equality iff every corner $P_{a,u} P_{b,v} P_{c,w} P_{a,u} \in \C \cdot P_{a,u}$. Complex rank-1 MUBs saturate $S_3 = 1$, whereas Tiers~1--3 collapse to $S_3 \in \{\frac{1}{4}, \frac{1}{3}, \frac{1}{2}\}$ (Parseval incompleteness in the $d^2$-dimensional orthonormal basis $\{E_{ij} = \sqrt{d}\, P_{0,i} P_{1,j}\}$ of $M_d(\C)$). Enforcing Parseval completeness ($|c_{a,k}[i,j]| = 1/d$, row/column sums $= 1/\sqrt{d}$, basis completeness $\sum_k c_{a,k} = 1/\sqrt{d}$, and exact Gram overlaps) without specifying $H_1$ sharply refutes $(d, d+2)$ for $d \in \{2,3,4\}$ (losses $1.63, 3.44, 4.13$) while descending to $2.06 \times 10^{-3}$ on $(d=6, m=4)$; imposing the multiplicative rank-1 Bargmann cocycle $\rank(d\, F_d \odot c_{a,k}) = 1$ collapses $(d=3, m=4)$ to $5.19 \times 10^{-23}$ and $(d=5, m=4)$ to $2.84 \times 10^{-15}$, while opening a $+14$-order-of-magnitude hard cocycle gap on $(d=6, m=4)$ (loss $0.6826$, SVD tail $0.3198$). Independently, homotopy continuation of the gauge-invariant non-commutativity order parameter $E_{\mathrm{comm}}(Q) \ge 0$ strictly along the quaternionic 4-MUB manifold $\mathcal{M}_{\HH}(d,4)$ toward $\C^d$ separates $d \in \{3,4,5\}$ ($E_{\mathrm{comm}} \le 1.6 \times 10^{-14}$) from $d=2$ ($1/36 = 0.0278$), $d=6$ ($0.0435$), and $d=10$ ($0.0678$) by 12--14 orders of magnitude.
+For any tracial MUB model, Cauchy--Schwarz yields
+\[
+  S_3(a,b,c) := d^2 \sum_{u,v,w=0}^{d-1} |\tau(P_{a,u} P_{b,v} P_{c,w})|^2 \le 1,
+\]
+with equality iff every corner $P_{a,u} P_{b,v} P_{c,w} P_{a,u} \in \C \cdot P_{a,u}$. Complex rank-1 MUBs saturate $S_3 = 1$, whereas Tiers~1--3 collapse to $S_3 \in \{\frac{1}{4}, \frac{1}{3}, \frac{1}{2}\}$ (Parseval incompleteness in the $d^2$-dimensional orthonormal basis $\{E_{ij} = \sqrt{d}\, P_{0,i} P_{1,j}\}$ of $M_d(\C)$). Enforcing Parseval completeness ($|c_{a,k}[i,j]| = 1/d$, row/column sums $= 1/\sqrt{d}$, basis completeness $\sum_k c_{a,k} = 1/\sqrt{d}$, and exact Gram overlaps) without specifying $H_1$ sharply refutes $(d, d+2)$ for $d \in \{2,3,4\}$ (losses $1.63, 3.44, 4.13$) while descending to $2.06 \times 10^{-3}$ on $(d=6, m=4)$; imposing the multiplicative rank-1 Bargmann cocycle $\rank(d\, F_d \odot c_{a,k}) = 1$ collapses $(d=3, m=4)$ to $5.19 \times 10^{-23}$ and $(d=5, m=4)$ to $2.84 \times 10^{-15}$, while opening a $+14$-order-of-magnitude hard cocycle gap on $(d=6, m=4)$ (loss $0.6826$, SVD tail $0.3198$). Independently, homotopy continuation of the gauge-invariant non-commutativity order parameter $E_{\mathrm{comm}}(Q) \ge 0$ strictly along the quaternionic 4-MUB manifold $\mathcal{M}_{\HH}(d,4)$ toward $\C^d$ separates $d \in \{3,4,5\}$ ($E_{\mathrm{comm}} \le 1.6 \times 10^{-14}$) from $d=2$ ($1/36 = 0.0278$), $d=6$ ($0.0435$), and $d=10$ ($0.0678$) by 12--14 orders of magnitude.
 \end{proposition}
 
 \section{Discussion: Roadmap to Phase-Retaining Composite-Dimension Refutations}
