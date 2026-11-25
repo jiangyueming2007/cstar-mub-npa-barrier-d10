@@ -47,7 +47,7 @@
 \maketitle
 
 \begin{abstract}
-Noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / tracial SDP hierarchy) provides an operator-algebraic route to upper-bounding the maximum number $N(d)$ of mutually unbiased bases (MUBs) in $\C^d$. In this paper, we map the exact structural boundaries of tracial and two-copy SDP hierarchies for composite dimensions—focusing on $d=6$ (recently resolved as $N(6)=3$ in 2026 preprints) and the smallest remaining open composite dimension $d=10$—through four rigorous, zero-floating-point algebraic results:
+Noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / tracial SDP hierarchy) provides an operator-algebraic route to upper-bounding the maximum number $N(d)$ of mutually unbiased bases (MUBs) in $\C^d$. In this paper, we map the exact structural boundaries of tracial and two-copy SDP hierarchies for composite dimensions---focusing on $d=6$ (recently resolved as $N(6)=3$ in 2026 preprints) and the smallest remaining open composite dimension $d=10$---through four rigorous, zero-floating-point algebraic results:
 \begin{enumerate}
   \item \textbf{Three-Tier Finite-Dimensional $C^*$-MUB Hierarchy ($N_{C^*}(d) = \infty$).} All constructions below are higher-rank projector representations in $M_{rd}(\C)$ ($r \ge 2$), \emph{not} rank-1 complex MUBs in $\C^d$, and satisfy all intra-basis orthogonality, completeness, MUB triple relations $P_{a,u} P_{b,v} P_{a,u} = \frac{1}{d} P_{a,u}$, and trace normalization axioms:
   \begin{itemize}
@@ -67,7 +67,7 @@ Two orthonormal bases $B_a, B_b$ of $\C^d$ are \emph{mutually unbiased} (MUBs) i
 
 A promising dimension-general strategy casts MUB existence into a $C^*$-algebraic feasibility problem solved via noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / tracial SDP hierarchy), notably refined with $S_d \wr S_m$ wreath-product symmetry reduction by Gribling and Polak~\cite{GriblingPolak2024} (who obtained SOS refutations of $d+2$ MUBs for $d \le 8$ while reporting numerical evidence of a degree-12 barrier on $d=6$) and commuting polynomial relaxations by Mortimer~\cite{Mortimer2025}.
 
-This paper systematically maps \emph{what tracial and two-copy SDP hierarchies can and cannot see} for composite dimensions $d = 6, 10, \dots$, combining exact zero-floating-point `BigInt` algebraic constructions with sharp structural no-go theorems and minimal rank-1 separation repairs. All algebraic proofs in Sections~\ref{sec:hierarchy}--\ref{sec:gp-align} are accompanied by a standalone, zero-dependency Node.js verification package (`verify\_all.mjs`) that independently re-certifies every identity in exact cyclotomic integer rings in under two minutes.
+This paper systematically maps \emph{what tracial and two-copy SDP hierarchies can and cannot see} for composite dimensions $d = 6, 10, \dots$, combining exact zero-floating-point \texttt{BigInt} algebraic constructions with sharp structural no-go theorems and minimal rank-1 separation repairs. All algebraic proofs in Sections~\ref{sec:hierarchy}--\ref{sec:gp-align} are accompanied by a standalone, zero-dependency Node.js verification package (\texttt{verify\_all.mjs}) that independently re-certifies every identity in exact cyclotomic integer rings in under two minutes.
 
 \section{Three-Tier Finite-Dimensional $C^*$-MUB Hierarchy ($N_{C^*}(d) = \infty$)}
 \label{sec:hierarchy}
@@ -92,7 +92,7 @@ Let $q = p^r$ be an odd prime power, $F_q$ the discrete Fourier matrix over $\F_
 \]
 \begin{enumerate}
   \item For $q = 3$ ($d = 6$), choosing $(q_m, a_m) \in \{(1,1), (i,2), (j,0)\}$ yields an exact \textbf{quaternionic 4-MUB} in $\HH^6 \hookrightarrow \C^{12}$ (rank-2 complex projectors in $M_{12}(\C)$).
-  \item For every odd prime power $q \ge 5$ (including $d = 10, 14, 18, 22, \dots$), choosing $(q_m, a_m) \in \{(1,1), (i,-1), (j,2), (k,-2)\}$ when $\operatorname{char}(\F_q) \ge 5$—or $\{(1,1), (i,-1), (j,\theta), (k,-\theta)\}$ with $\theta \in \F_q \setminus \F_3$ when $q = 3^r \ge 9$—yields an exact \textbf{quaternionic 5-MUB} in $\HH^{2q} \hookrightarrow \C^{4q}$ (rank-2 complex projectors in $M_{2d}(\C)$).
+  \item For every odd prime power $q \ge 5$ (including $d = 10, 14, 18, 22, \dots$), choosing $(q_m, a_m) \in \{(1,1), (i,-1), (j,2), (k,-2)\}$ when $\operatorname{char}(\F_q) \ge 5$---or $\{(1,1), (i,-1), (j,\theta), (k,-\theta)\}$ with $\theta \in \F_q \setminus \F_3$ when $q = 3^r \ge 9$---yields an exact \textbf{quaternionic 5-MUB} in $\HH^{2q} \hookrightarrow \C^{4q}$ (rank-2 complex projectors in $M_{2d}(\C)$).
 \end{enumerate}
 \end{theorem}
 
@@ -138,19 +138,19 @@ Check $Y^d$: acting on $|x\rangle$, $Y^d|x\rangle = \eta^d \omega_d^{d(d-1)/2} |
 Multiplying on both sides by $P_{a,u}$ gives $P_{a,u} U_b^t P_{a,u} = 0$ for all $t \ne 0 \pmod d$, whence $P_{a,u} P_{b,v} P_{a,u} = \frac{1}{d}\sum_{t=0}^{d-1} \omega_d^{-vt} P_{a,u} U_b^t P_{a,u} = \frac{1}{d} P_{a,u}$.
 \end{proof}
 
-All three tiers are verified with zero floating-point arithmetic in `scripts/01`--`05` over exact cyclotomic rings $\Z[i,\omega_p]$ and $\Z[\zeta_{2d}]$, including dense matrix audits for $(d,m)=(3,5)$ in $M_9$ (exceeding $d+1=4$), $(6,5)$ in $M_{36}$, $(10,6)$ in $M_{40}$, and operator checks up to $(10,21)$.
+All three tiers are verified with zero floating-point arithmetic in \texttt{scripts/01}--\texttt{05} over exact cyclotomic rings $\Z[i,\omega_p]$ and $\Z[\zeta_{2d}]$, including dense matrix audits for $(d,m)=(3,5)$ in $M_9$ (exceeding $d+1=4$), $(6,5)$ in $M_{36}$, $(10,6)$ in $M_{40}$, and operator checks up to $(10,21)$.
 
 \section{Axiom-by-Axiom Alignment with Gribling--Polak (Def.\ 3.1) and Exact Degree Thresholds}
 \label{sec:gp-align}
 
-Gribling and Polak~\cite{GriblingPolak2024} (Definition~3.1) formulate the $(d,m)$-MUB algebra via four relations plus a trace condition ($\tau_{\mathrm{GP}}(I)=d$, related to our normalized trace by $\tau_{\mathrm{GP}} = d \cdot \tau$). Table~\ref{tab:gp} records our zero-float audit (`scripts/03_gribling_polak_def31_alignment_QED.mjs`, 17.8s) against every axiom.
+Gribling and Polak~\cite{GriblingPolak2024} (Definition~3.1) formulate the $(d,m)$-MUB algebra via four relations plus a trace condition ($\tau_{\mathrm{GP}}(I)=d$, related to our normalized trace by $\tau_{\mathrm{GP}} = d \cdot \tau$). Table~\ref{tab:gp} records our zero-float audit (\texttt{scripts/03\_gribling\_polak\_def31\_alignment\_QED.mjs}, 17.8s) against every axiom.
 
 \begin{table}[h]
 \centering
 \small
 \begin{tabular}{@{}llll@{}}
 \toprule
-GP Def.\ 3.1 Item & Relation & Rank-2 Quat Model & Zero-Float Audit & Exact Scope \\
+GP Def.\ 3.1 Item & Relation & Rank-2 Quat Model & Zero-Float Audit \& Exact Scope \\
 \midrule
 (i) Intra-basis ortho & $P_{a,u} P_{a,v} = \delta_{uv} P_{a,u}$ & Exact $\checkmark$ & $d=6$: 144 checks; $d=10$: 500 checks (all $u,v$) \\
 (ii) Completeness & $\sum_u P_{a,u} = I$ & Exact $\checkmark$ & $d=6$: 4 bases; $d=10$: 5 bases \\
@@ -167,8 +167,8 @@ $S_d \wr S_m$ reduction & Group-averaged SDP & Automatic $\checkmark$ & Averagin
 \begin{corollary}[Two-Layer Tracial NPA Barrier and Exact Ideal-Detection Degrees]
 \label{cor:two-layer}
 \begin{enumerate}
-  \item \textbf{Layer 1 (Without Axiom~(iv)):} By Theorem~\ref{thm:jw}, any dimension-blind tracial NPA/SDP hierarchy enforcing~\eqref{eq:ax-i}--\eqref{eq:ax-tr} (with or without $S_d \wr S_m$ symmetry reduction) is feasible at every finite and infinite order $k \to \infty$ for \emph{all} $d \ge 2$ and \emph{all} $m \ge 1$—it cannot even establish $N(d) \le d+1$. This explains rigorously why axiom~(iv) is structurally indispensable in~\cite{GriblingPolak2024} even to rule out $d+2$ MUBs.
-  \item \textbf{Layer 2 (With Axiom~(iv) as a Two-Sided Ideal):} On our rank-2 quaternionic models ($d=6,10$), $[XUX,XVX] \equiv 0$ holds identically whenever $\deg(U) \le 1$ or $\deg(V) \le 1$ (covering the degree-$\le 3$ reductions noted in~\cite{GriblingPolak2024}, Theorem~3.2), and $\tau(W[A,B]) \equiv 0$ vanishes through trace degree $\le 6$ (moment level $t \le 3$). For minimal corners $A = P_{0,0} P_{1,0} P_{2,0} P_{0,0}$ and $B = P_{0,0} P_{1,0} P_{3,0} P_{0,0}$, exact `BigInt` verification proves $C = [A, B] \ne 0$, $A^\dagger A = B^\dagger B = \frac{1}{d^3} P_{0,0}$, and two exact reduced cyclic thresholds:
+  \item \textbf{Layer 1 (Without Axiom~(iv)):} By Theorem~\ref{thm:jw}, any dimension-blind tracial NPA/SDP hierarchy enforcing~\eqref{eq:ax-i}--\eqref{eq:ax-tr} (with or without $S_d \wr S_m$ symmetry reduction) is feasible at every finite and infinite order $k \to \infty$ for \emph{all} $d \ge 2$ and \emph{all} $m \ge 1$---it cannot even establish $N(d) \le d+1$. This explains rigorously why axiom~(iv) is structurally indispensable in~\cite{GriblingPolak2024} even to rule out $d+2$ MUBs.
+  \item \textbf{Layer 2 (With Axiom~(iv) as a Two-Sided Ideal):} On our rank-2 quaternionic models ($d=6,10$), $[XUX,XVX] \equiv 0$ holds identically whenever $\deg(U) \le 1$ or $\deg(V) \le 1$ (covering the degree-$\le 3$ reductions noted in~\cite{GriblingPolak2024}, Theorem~3.2), and $\tau(W[A,B]) \equiv 0$ vanishes through trace degree $\le 6$ (moment level $t \le 3$). For minimal corners $A = P_{0,0} P_{1,0} P_{2,0} P_{0,0}$ and $B = P_{0,0} P_{1,0} P_{3,0} P_{0,0}$, exact \texttt{BigInt} verification proves $C = [A, B] \ne 0$, $A^\dagger A = B^\dagger B = \frac{1}{d^3} P_{0,0}$, and two exact reduced cyclic thresholds:
   \begin{itemize}
     \item \emph{Reduced cyclic degree-7 linear ideal witness} ($t=4$): For $E = P_{0,0} P_{3,1} P_{1,0} P_{0,0}$, both terms of $\Tr(E[A,B])$ collapse via $P_{1,0} P_{0,0} P_{1,0} = \frac{1}{d} P_{1,0}$ to exact 7-letter cyclic words with $\Tr(E[A,B]) \ne 0$ (4 verified witnesses in $d=6$, 18 in $d=10$).
     \item \emph{Reduced cyclic degree-10 SOS norm} ($t=5$; degree 12 for unshared interior bases): Merging $P_0^2 = P_0$ and $P_1 P_0 P_1 = \frac{1}{d} P_1$ reduces the raw 16-letter trace $\Tr(C^\dagger C)$ identically to the exact 10-letter word $W_{10} = P_0 P_3 P_1 P_0 P_2 P_1 P_3 P_0 P_1 P_2$ via $\Tr(C^\dagger C) = \frac{4}{d^6} - \frac{2}{d}\operatorname{Re}\Tr(W_{10}) > 0$.
@@ -176,7 +176,7 @@ $S_d \wr S_m$ reduction & Group-averaged SDP & Automatic $\checkmark$ & Averagin
 \end{enumerate}
 \end{corollary}
 
-We present Corollary~\ref{cor:two-layer}(2) as an explicit algebraic mechanism explaining why high-degree ideal multiples of axiom~(iv) are necessary—rather than an unproven minimality lower bound—noting faithfully that Gribling--Polak report the degree-12 barrier in $d=6$ as numerical evidence (\emph{``numerical results indicate''}).
+We present Corollary~\ref{cor:two-layer}(2) as an explicit algebraic mechanism explaining why high-degree ideal multiples of axiom~(iv) are necessary---rather than an unproven minimality lower bound---noting faithfully that Gribling--Polak report the degree-12 barrier in $d=6$ as numerical evidence (\emph{``numerical results indicate''}).
 
 \section{Universal Rank-$r$ Two-Copy $\Lambda^2$ Separation, Phase-Erasure No-Go, and Homotopy Mass Gap}
 \label{sec:2copy}
