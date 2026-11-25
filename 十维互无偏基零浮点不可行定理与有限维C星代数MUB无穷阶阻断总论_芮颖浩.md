@@ -2,6 +2,7 @@
 
 > **作者**：芮颖浩（Yinghao Rui）  
 > **整理日期**：2026-11-25（含外部审稿意见全量装甲修订 + Round 20–22 终极版）  
+> **永久学术 DOI**：[10.5281/zenodo.24530887](https://doi.org/10.5281/zenodo.24530887)（公开代码仓库：https://github.com/jiangyueming2007/cstar-mub-npa-barrier-d10 ）  
 > **归档目录**：`D:\antigravity\d10_mub_continuous\preprint_d10_mub\`  
 > **配套文件**：
 > - 英文 arXiv 预印本草稿：[paper_draft_en.md](file:///D:/antigravity/d10_mub_continuous/preprint_d10_mub/paper_draft_en.md)  

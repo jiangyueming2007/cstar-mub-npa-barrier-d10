@@ -1,7 +1,11 @@
 # Zero-Float Verification Package: $C^*$-Algebra MUBs ($N_{C^*}(d) = \infty$), Gribling–Polak Alignment, and Exact $d=10$ Impossibility Theorems
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24530887.svg)](https://doi.org/10.5281/zenodo.24530887)
+
 **Author:** Yinghao Rui (芮颖浩)  
-**Date:** November 25, 2026
+**Date:** November 25, 2026  
+**Archival DOI (v1.0.0):** [10.5281/zenodo.24530887](https://doi.org/10.5281/zenodo.24530887) (All versions: [10.5281/zenodo.24530886](https://doi.org/10.5281/zenodo.24530886))  
+**Repository:** https://github.com/jiangyueming2007/cstar-mub-npa-barrier-d10
 
 This self-contained, **zero-dependency** verification package reproduces every zero-floating-point algebraic theorem in our two companion preprints:
 
@@ -51,3 +55,22 @@ node verify_all.mjs --fast
 | `08` | `scripts/08_B_iso_72orbits_171D_rigidity_QED.mjs` | **Paper I:** Chiral $B_{\mathrm{iso}} \in \frac{1}{9}\mathbb{Z}[i,\sqrt{5}]$ (`{0,0,16}`) 72-basis orbit & exact `171/171` Joint 3-MUB Rigidity | ~4s |
 
 All file checksums are recorded in `PACKAGE_SHA256.json`.
+
+---
+
+## Citation
+
+If you use or verify these results, please cite the archival release:
+
+```bibtex
+@misc{rui2026cstarmub,
+  author       = {Rui, Yinghao},
+  title        = {{Higher-Rank C*-Algebra MUBs ($N_{C^*}(d) = \infty$), Gribling--Polak Def. 3.1 Alignment, and $d=10$ Zero-Float Verification Suite}},
+  month        = nov,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.24530887},
+  url          = {https://doi.org/10.5281/zenodo.24530887}
+}
+```

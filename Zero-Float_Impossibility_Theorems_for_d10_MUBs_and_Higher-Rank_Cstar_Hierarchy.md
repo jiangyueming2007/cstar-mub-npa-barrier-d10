@@ -3,6 +3,7 @@
 **Author:** Yinghao Rui (芮颖浩)  
 **Working Preprint Draft (arXiv-Ready Structure)**  
 *Date:* November 25, 2026  
+*Permanent Archival DOI:* [10.5281/zenodo.24530887](https://doi.org/10.5281/zenodo.24530887) (Repository: https://github.com/jiangyueming2007/cstar-mub-npa-barrier-d10)  
 *Archive & Reproducibility Manifest:* `D:\antigravity\d10_mub_continuous\preprint_d10_mub\MANIFEST_SHA256.json`
 
 ---

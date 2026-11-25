@@ -1,22 +1,29 @@
 {
   "author": "Yinghao Rui (芮颖浩)",
-  "generatedAt": "2026-11-25T10:44:41.322Z",
-  "totalFiles": 20,
+  "doi": "10.5281/zenodo.24530887",
+  "conceptDoi": "10.5281/zenodo.24530886",
+  "generatedAt": "2026-11-25T12:00:39.032Z",
+  "totalFiles": 21,
   "files": [
     {
+      "path": "CITATION.cff",
+      "bytes": 711,
+      "sha256": "a4aa2440c5d854bd2f842c5e89a9ab9585ba9721a04d82d40dc91fbab8be3a0e"
+    },
+    {
       "path": "Higher-Rank_Cstar-Algebra_MUBs_N_Cstar_Inf_Gribling-Polak_Alignment_and_Degree-2_Rank-1_Separation.tex",
-      "bytes": 25167,
-      "sha256": "e7801945d4fb918d583eb4189203a926676bb1ba26b3f068386f3cd9fae6ee8d"
+      "bytes": 25326,
+      "sha256": "d465b9d0d50800c2593c98dd740ed43425eab95200defc379d4b612cd0f376a3"
     },
     {
       "path": "README.md",
-      "bytes": 3846,
-      "sha256": "aff629d9c4eda9a5de2cc2bb6163842020a94c06ad53bca7ae216f4343bb2619"
+      "bytes": 4730,
+      "sha256": "e390fdefa3196baf4605c0b1d89bf46668d7306759aec311b40c25a919ef4969"
     },
     {
       "path": "Zero-Float_Impossibility_Theorems_for_d10_MUBs_and_Higher-Rank_Cstar_Hierarchy.md",
-      "bytes": 27512,
-      "sha256": "0a0caea91c252d3a3f80f1fafecca5d033cbafd3deae64d67716e4c61f09d94f"
+      "bytes": 27683,
+      "sha256": "673d00fa975155aba6f79a54211cc89e6cd29f400aaf5d5c47b09689c75e5c10"
     },
     {
       "path": "certificates/01_quaternionic_4_5_mub_QED.json",
@@ -100,8 +107,8 @@
     },
     {
       "path": "十维互无偏基零浮点不可行定理与有限维C星代数MUB无穷阶阻断总论_芮颖浩.md",
-      "bytes": 31221,
-      "sha256": "c05fc0cfc488acce8e8ed6e7fe26a4fe0ef0ccf759a9f5a5c80a74f1d50aac84"
+      "bytes": 31404,
+      "sha256": "bcfe78ff1e6b4a59ed5c842f04778439123c42937fe46dea0dcc9e8110b7ef67"
     }
   ]
 }

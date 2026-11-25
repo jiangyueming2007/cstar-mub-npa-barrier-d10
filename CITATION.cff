@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this preprint or zero-float verification suite, please cite it as below."
+type: software
+title: "Higher-Rank C*-Algebra MUBs (N_{C*}(d) = infinity), Gribling-Polak Def. 3.1 Alignment, and d=10 Zero-Float Verification Suite"
+version: "v1.0.0"
+doi: "10.5281/zenodo.24530887"
+date-released: "2026-11-25"
+url: "https://github.com/jiangyueming2007/cstar-mub-npa-barrier-d10"
+repository-code: "https://github.com/jiangyueming2007/cstar-mub-npa-barrier-d10"
+authors:
+  - family-names: "Rui"
+    given-names: "Yinghao"
+keywords:
+  - mutually unbiased bases
+  - C*-algebra
+  - NPA hierarchy
+  - semidefinite programming
+  - quaternionic MUBs
+  - Clifford algebra
+  - dimension 10
