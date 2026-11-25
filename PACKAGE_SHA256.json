@@ -1,0 +1,107 @@
+{
+  "author": "Yinghao Rui (芮颖浩)",
+  "generatedAt": "2026-11-25T10:44:41.322Z",
+  "totalFiles": 20,
+  "files": [
+    {
+      "path": "Higher-Rank_Cstar-Algebra_MUBs_N_Cstar_Inf_Gribling-Polak_Alignment_and_Degree-2_Rank-1_Separation.tex",
+      "bytes": 25167,
+      "sha256": "e7801945d4fb918d583eb4189203a926676bb1ba26b3f068386f3cd9fae6ee8d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3846,
+      "sha256": "aff629d9c4eda9a5de2cc2bb6163842020a94c06ad53bca7ae216f4343bb2619"
+    },
+    {
+      "path": "Zero-Float_Impossibility_Theorems_for_d10_MUBs_and_Higher-Rank_Cstar_Hierarchy.md",
+      "bytes": 27512,
+      "sha256": "0a0caea91c252d3a3f80f1fafecca5d033cbafd3deae64d67716e4c61f09d94f"
+    },
+    {
+      "path": "certificates/01_quaternionic_4_5_mub_QED.json",
+      "bytes": 897,
+      "sha256": "3573275255853b0b076516879dccfa4aded0fa4f14d17de00ad736bdc8e09bdb"
+    },
+    {
+      "path": "certificates/02_complex_M12_M20_projectors_QED.json",
+      "bytes": 378,
+      "sha256": "e450ab1505649a2110b74390468b5f10898d802b4f79b899603fa886b008cdba"
+    },
+    {
+      "path": "certificates/03_gribling_polak_def31_alignment_QED.json",
+      "bytes": 1019,
+      "sha256": "0edf7f6b1d37b516ec237b06dc20c2b3c9ebdf9cfa3f060b6e5be5a1c07a64ea"
+    },
+    {
+      "path": "certificates/05_universal_jordan_wigner_N_Cstar_inf_QED.json",
+      "bytes": 2585,
+      "sha256": "a98b971daeedfb1dc4a321fe893c2752336977f475f514d49f517c657f20103c"
+    },
+    {
+      "path": "certificates/07_B_new_fixed_Hconf_isolation_QED.json",
+      "bytes": 626,
+      "sha256": "3193a4fa2d2ce3799035a8515a17a037a2f7f4fa539d7d885e7293ebd09697d0"
+    },
+    {
+      "path": "data/B_iso_0016_exact_Q_i_sqrt5.json",
+      "bytes": 6061,
+      "sha256": "9c3b22a94bcc5bcc337c40fe7e6a2cc5e291013239e2918810f1aefc36124c68"
+    },
+    {
+      "path": "data/B_new_exotic_third_basis.json",
+      "bytes": 2362,
+      "sha256": "50be13b36ad5cb868b6d426bae413c7f42c5018dee2efb0d28ff4a8781e2bbb3"
+    },
+    {
+      "path": "scripts/01_quaternionic_4_5_mub_QED.mjs",
+      "bytes": 10721,
+      "sha256": "6494261da11541a5f5db23393d747595ec6509df860996875560f01955aa0a6f"
+    },
+    {
+      "path": "scripts/02_complex_M12_M20_projectors_QED.mjs",
+      "bytes": 9963,
+      "sha256": "8e78164b15a518a8022bb65e29ff073bc743e9103773c807c728a15b7bccbffe"
+    },
+    {
+      "path": "scripts/03_gribling_polak_def31_alignment_QED.mjs",
+      "bytes": 13181,
+      "sha256": "9aaca0ff8d55ac045b926d7abbc4fe565a7ec2e208db24be5ca2211ab2354b5e"
+    },
+    {
+      "path": "scripts/04_clifford_6_8_12_mub_QED.mjs",
+      "bytes": 15592,
+      "sha256": "c582d166e662dba2a66090df0ced1eda72fd9a0e3fa4f38da393a9711e4a9e5b"
+    },
+    {
+      "path": "scripts/05_universal_jordan_wigner_N_Cstar_inf_QED.mjs",
+      "bytes": 14177,
+      "sha256": "0fd224b4941bd14603a6731a2048af9967a7c132f035b5a232965c9ae9c5bbac"
+    },
+    {
+      "path": "scripts/06_B_new_no_4th_vec_nullstellensatz_QED.mjs",
+      "bytes": 13347,
+      "sha256": "b3201dae30faa48b6e82c2a58ce359722f85a3b5882766d602e943b8deb9128d"
+    },
+    {
+      "path": "scripts/07_B_new_fixed_Hconf_isolation_QED.mjs",
+      "bytes": 13437,
+      "sha256": "e15253b98c5080967ff8a0e22d965efb8dcbb4e5f9a2213d7440571b9f0c5fe3"
+    },
+    {
+      "path": "scripts/08_B_iso_72orbits_171D_rigidity_QED.mjs",
+      "bytes": 20784,
+      "sha256": "17036af3bef00c124426163358f516cc867702463b6311f0dbd5f9df9a60a8e1"
+    },
+    {
+      "path": "verify_all.mjs",
+      "bytes": 3213,
+      "sha256": "4c6aae9af15fa0c6a685f70705f48d07655da9a5599623b7052073fbd4b8c21a"
+    },
+    {
+      "path": "十维互无偏基零浮点不可行定理与有限维C星代数MUB无穷阶阻断总论_芮颖浩.md",
+      "bytes": 31221,
+      "sha256": "c05fc0cfc488acce8e8ed6e7fe26a4fe0ef0ccf759a9f5a5c80a74f1d50aac84"
+    }
+  ]
+}

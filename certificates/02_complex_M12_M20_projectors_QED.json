@@ -1,0 +1,19 @@
+{
+  "elapsedSec": 21.46,
+  "d6_M12": {
+    "d": 6,
+    "complexMatrixDim": 12,
+    "mBases": 4,
+    "totalProjectors": 24,
+    "exactTripleChecksPassed": 432,
+    "cornerCommutatorNonZero": true
+  },
+  "d10_M20": {
+    "d": 10,
+    "complexMatrixDim": 20,
+    "mBases": 5,
+    "totalProjectors": 50,
+    "exactTripleChecksPassed": 2000,
+    "cornerCommutatorNonZero": true
+  }
+}

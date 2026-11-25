@@ -1,0 +1,23 @@
+{
+  "elapsedSec": 0.1,
+  "results": [
+    {
+      "prime": "1000081",
+      "fixed_Hconf_90D_rank": "90/90",
+      "fixed_Hconf_Bnew_strictly_isolated": true,
+      "joint_171D_rank": "167/171",
+      "joint_171D_defect": 4,
+      "M4_tangent_B2_projection_rank": "4/4",
+      "M4_strictly_transverse_to_fixed_Hconf": true
+    },
+    {
+      "prime": "1000921",
+      "fixed_Hconf_90D_rank": "90/90",
+      "fixed_Hconf_Bnew_strictly_isolated": true,
+      "joint_171D_rank": "167/171",
+      "joint_171D_defect": 4,
+      "M4_tangent_B2_projection_rank": "4/4",
+      "M4_strictly_transverse_to_fixed_Hconf": true
+    }
+  ]
+}

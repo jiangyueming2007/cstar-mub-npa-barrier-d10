@@ -1,0 +1,96 @@
+{
+  "elapsedSec": 0.89,
+  "cases": [
+    {
+      "d": 3,
+      "m_bases": 5,
+      "exceededComplexBound": true,
+      "quditCopies_k": 2,
+      "complexRank_r": 3,
+      "matrixDim_D": 9,
+      "exactWeylPairChecks": 10,
+      "directDenseIntraChecks": 45,
+      "directDenseTripleChecks": 180,
+      "directCornerCommNonZero": true,
+      "universalLambda2Leakage": "2/6 (33.33%)"
+    },
+    {
+      "d": 3,
+      "m_bases": 7,
+      "exceededComplexBound": true,
+      "quditCopies_k": 3,
+      "complexRank_r": 9,
+      "matrixDim_D": 27,
+      "exactWeylPairChecks": 21,
+      "directDenseIntraChecks": 28,
+      "directDenseTripleChecks": 168,
+      "directCornerCommNonZero": true,
+      "universalLambda2Leakage": "8/18 (44.44%)"
+    },
+    {
+      "d": 6,
+      "m_bases": 5,
+      "exceededComplexBound": false,
+      "quditCopies_k": 2,
+      "complexRank_r": 6,
+      "matrixDim_D": 36,
+      "exactWeylPairChecks": 10,
+      "directDenseIntraChecks": 20,
+      "directDenseTripleChecks": 80,
+      "directCornerCommNonZero": true,
+      "universalLambda2Leakage": "5/12 (41.67%)"
+    },
+    {
+      "d": 6,
+      "m_bases": 8,
+      "exceededComplexBound": true,
+      "quditCopies_k": 4,
+      "complexRank_r": 216,
+      "matrixDim_D": 1296,
+      "exactWeylPairChecks": 28,
+      "directDenseIntraChecks": 0,
+      "directDenseTripleChecks": 0,
+      "directCornerCommNonZero": false,
+      "universalLambda2Leakage": "215/432 (49.77%)"
+    },
+    {
+      "d": 10,
+      "m_bases": 5,
+      "exceededComplexBound": false,
+      "quditCopies_k": 2,
+      "complexRank_r": 10,
+      "matrixDim_D": 100,
+      "exactWeylPairChecks": 10,
+      "directDenseIntraChecks": 0,
+      "directDenseTripleChecks": 0,
+      "directCornerCommNonZero": false,
+      "universalLambda2Leakage": "9/20 (45.00%)"
+    },
+    {
+      "d": 10,
+      "m_bases": 12,
+      "exceededComplexBound": true,
+      "quditCopies_k": 6,
+      "complexRank_r": 100000,
+      "matrixDim_D": 1000000,
+      "exactWeylPairChecks": 66,
+      "directDenseIntraChecks": 0,
+      "directDenseTripleChecks": 0,
+      "directCornerCommNonZero": false,
+      "universalLambda2Leakage": "99999/200000 (50.00%)"
+    },
+    {
+      "d": 10,
+      "m_bases": 21,
+      "exceededComplexBound": true,
+      "quditCopies_k": 10,
+      "complexRank_r": 1000000000,
+      "matrixDim_D": 10000000000,
+      "exactWeylPairChecks": 210,
+      "directDenseIntraChecks": 0,
+      "directDenseTripleChecks": 0,
+      "directCornerCommNonZero": false,
+      "universalLambda2Leakage": "999999999/2000000000 (50.00%)"
+    }
+  ]
+}

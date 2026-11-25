@@ -1,0 +1,24 @@
+{
+  "theorem": "Exact Zero-Float Closed-Form Quaternionic MUBs in H^{2p} (4-MUB for p=3 => d=6; 5-MUB for p>=5 => d=10,14,...)",
+  "implication": "Every dimension-blind tracial NPA / C*-algebra SDP hierarchy (imposing P^2=P=P*, sum P=I, tau(P)=1/d, P_a P_b P_a=(1/d)P_a) is STRICTLY FEASIBLE to INFINITE DEGREE k=infinity for 4-MUBs in d=6 and 5-MUBs in d=10! Only rank-1 abelian-corner identities (non-vanishing commutator [P_0 P_a P_b P_0, P_0 P_c P_d P_0] = 0, min SOS degree 12) can distinguish C^d from H^d!",
+  "verified": [
+    {
+      "d": 6,
+      "mTotal": 4,
+      "exactZeroFloatPassed": true,
+      "cornerCommutatorNonZero": true
+    },
+    {
+      "d": 10,
+      "mTotal": 5,
+      "exactZeroFloatPassed": true,
+      "cornerCommutatorNonZero": true
+    },
+    {
+      "d": 14,
+      "mTotal": 5,
+      "exactZeroFloatPassed": true,
+      "cornerCommutatorNonZero": true
+    }
+  ]
+}

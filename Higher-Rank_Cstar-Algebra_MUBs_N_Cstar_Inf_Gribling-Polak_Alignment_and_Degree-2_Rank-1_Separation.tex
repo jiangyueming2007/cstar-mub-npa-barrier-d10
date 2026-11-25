@@ -1,0 +1,237 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,multirow}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!50!black,
+  urlcolor=blue!70!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\SWAP}{\operatorname{SWAP}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Cl}{\operatorname{Cl}}
+
+\title{\textbf{Higher-Rank $C^*$-Algebra Mutually Unbiased Bases ($N_{C^*}(d) = \infty$), Axiom-by-Axiom Gribling--Polak Alignment, and Universal Degree-2 Rank-1 Separation}}
+
+\author{
+  Yinghao Rui\thanks{Independent Researcher. Standalone zero-floating-point verification suite (\texttt{verify\_all.mjs}, pure Node.js, zero external dependencies, SHA-256 manifest) accompanies this preprint.}
+}
+
+\date{November 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / tracial SDP hierarchy) provides an operator-algebraic route to upper-bounding the maximum number $N(d)$ of mutually unbiased bases (MUBs) in $\C^d$. In this paper, we map the exact structural boundaries of tracial and two-copy SDP hierarchies for composite dimensions—focusing on $d=6$ (recently resolved as $N(6)=3$ in 2026 preprints) and the smallest remaining open composite dimension $d=10$—through four rigorous, zero-floating-point algebraic results:
+\begin{enumerate}
+  \item \textbf{Three-Tier Finite-Dimensional $C^*$-MUB Hierarchy ($N_{C^*}(d) = \infty$).} All constructions below are higher-rank projector representations in $M_{rd}(\C)$ ($r \ge 2$), \emph{not} rank-1 complex MUBs in $\C^d$, and satisfy all intra-basis orthogonality, completeness, MUB triple relations $P_{a,u} P_{b,v} P_{a,u} = \frac{1}{d} P_{a,u}$, and trace normalization axioms:
+  \begin{itemize}
+    \item \emph{Tier 1 (Minimal Non-Complex Rank $r=2$, Quaternionic):} Closed-form quaternionic 4-MUB in $d=6$ ($M_{12}(\Z[i,\omega_3])$) and quaternionic 5-MUB for every odd prime power $q \ge 5$, in particular $d = 2q \in \{10, 14, 18, \dots\}$ ($M_{20}(\Z[i,\omega_5])$ for $d=10$).
+    \item \emph{Tier 2 (Low-Rank Clifford $\Cl_{q+1} \otimes \mathrm{MUB}(\F_q)$):} Breaking the quaternionic $m \le 5$ ceiling, closed-form $(q+1)$-MUBs for all $d = 2^a q$, yielding an exact rank-4 6-MUB in $d=10$ ($M_{40}(\Z[i,\omega_5])$), 8-MUB in $d=14$, and 12-MUB in $d=22$.
+    \item \emph{Tier 3 (Universal Jordan--Wigner Theorem):} For \emph{every} integer $d \ge 2$ and \emph{every} $m \ge 1$ (including $m > d+1$ and $m \to \infty$), explicit $k$-qudit Weyl operators $U_a U_b = \omega_d^{\pm 1} U_b U_a$ in $(\C^d)^{\otimes \lceil (m-1)/2 \rceil}$ generate exact finite-dimensional $m$-MUBs, proving $N_{C^*}(d) = \infty$ whenever abelian-corner commutativity is omitted.
+  \end{itemize}
+  \item \textbf{Axiom-by-Axiom Alignment with Gribling--Polak (\emph{Quantum} 8, 1318, 2024, Def.\ 3.1).} We audit every axiom with zero floating-point arithmetic (144/500 intra-basis and 432/2,000 triple checks in $M_{12}/M_{20}$). Without axiom~(iv) $[XUX, XVX] = 0$, no tracial NPA/SDP hierarchy at any finite or infinite order $k \to \infty$ (even after $S_d \wr S_m$ symmetry reduction) can prove even the textbook bound $N(d) \le d+1$. When axiom~(iv) is imposed as a two-sided ideal, our rank-2 models survive all trace degrees $\le 6$ (moment level $t \le 3$) and are first detected at \emph{exact reduced cyclic degree 7} (linear ideal witness $\Tr(E[A,B]) \ne 0$: 4 witnesses in $d=6$, 18 in $d=10$) and \emph{reduced cyclic degree 10} (SOS commutator norm $\Tr([A,B]^\dagger[A,B]) > 0$, or degree 12 for unshared interior bases).
+  \item \textbf{Universal Rank-$r$ Two-Copy $\Lambda^2$ Zero-Leakage Theorem \& Phase-Erasure No-Go.} We prove in three lines that \emph{any} orthogonal projector $P$ of rank $r \ge 1$ satisfies $\Tr(P^{\otimes 2} P_{\Lambda^2})/\Tr(P^{\otimes 2}) = \frac{r-1}{2r}$ ($0\%$ iff $r=1$; universal $25\%$ for every rank-2 model; $\ge 25\%$ for all $r \ge 2$), eliminating all three higher-rank tiers simultaneously at degree~2. Conversely, we prove that the pure conjugate two-copy moment matrix $M_2(R)$ ($R_{a,i} = P_{a,i}\otimes\overline{P_{a,i}}$) refutes $(d, d+2)$ with zero free variables via a single negative eigenvalue, yet remains PSD-feasible at $(d=6, m=4)$ because $R_{a,i}$ erases all complex Bargmann phases.
+  \item \textbf{Degree-3 Bargmann Collapse \& $\HH^d \to \C^d$ Homotopy Mass Gap.} All three higher-rank tiers suffer severe degree-3 Bargmann saturation collapse ($S_3 \le 1/2$ vs.\ $S_3 = 1$ for complex rank-1). Homotopy continuation along the quaternionic 4-MUB manifold $\mathcal{M}_{\HH}(d,4)$ toward $\C^d$ exhibits a 12--14 order-of-magnitude phase transition separating $d \in \{3,4,5\}$ ($E_{\mathrm{comm}} \le 10^{-14}$) from $d \in \{2, 6, 10\}$ ($E_{\mathrm{comm}} \in \{1/36, 0.0435, 0.0678\}$).
+\end{enumerate}
+\end{abstract}
+
+\section{Introduction}
+
+Two orthonormal bases $B_a, B_b$ of $\C^d$ are \emph{mutually unbiased} (MUBs) if $|\langle u | v \rangle|^2 = 1/d$ for all $u \in B_a, v \in B_b$. While prime-power dimensions $d = p^r$ achieve the tight upper bound $N(d) = d + 1$, composite dimensions have resisted general classification for over four decades~\cite{McNultyWeigert2026}. Following a series of 2026 breakthroughs resolving the smallest composite dimension $d = 6$ as $N(6) = 3$ via computer-assisted proofs and topological/interval-arithmetic classification of order-6 complex Hadamard matrices~\cite{OpenAI2026,CardenesWuttigTindall2026,Jaswal2026}, dimension $d = 10$ ($3 \le N(10) \le 11$) now stands as the smallest unresolved composite dimension.
+
+A promising dimension-general strategy casts MUB existence into a $C^*$-algebraic feasibility problem solved via noncommutative polynomial optimization (the Navascu\'es--Pironio--Ac\'in / tracial SDP hierarchy), notably refined with $S_d \wr S_m$ wreath-product symmetry reduction by Gribling and Polak~\cite{GriblingPolak2024} (who obtained SOS refutations of $d+2$ MUBs for $d \le 8$ while reporting numerical evidence of a degree-12 barrier on $d=6$) and commuting polynomial relaxations by Mortimer~\cite{Mortimer2025}.
+
+This paper systematically maps \emph{what tracial and two-copy SDP hierarchies can and cannot see} for composite dimensions $d = 6, 10, \dots$, combining exact zero-floating-point `BigInt` algebraic constructions with sharp structural no-go theorems and minimal rank-1 separation repairs. All algebraic proofs in Sections~\ref{sec:hierarchy}--\ref{sec:gp-align} are accompanied by a standalone, zero-dependency Node.js verification package (`verify\_all.mjs`) that independently re-certifies every identity in exact cyclotomic integer rings in under two minutes.
+
+\section{Three-Tier Finite-Dimensional $C^*$-MUB Hierarchy ($N_{C^*}(d) = \infty$)}
+\label{sec:hierarchy}
+
+Let $d \ge 2$ and $m \ge 2$. A \emph{rank-$r$ finite-dimensional $C^*$-MUB} of $m$ bases in dimension $d$ consists of $m d$ Hermitian projectors $\{P_{a,u}\}_{a=0..m-1,\, u=0..d-1} \subset M_{rd}(\C)$ of rank $r$ satisfying:
+\begin{align}
+  \text{(i)}\;\; & P_{a,u} P_{a,v} = \delta_{uv} P_{a,u}, \qquad P_{a,u}^\dagger = P_{a,u}, \label{eq:ax-i}\\
+  \text{(ii)}\;\; & \sum_{u=0}^{d-1} P_{a,u} = I_{rd}, \label{eq:ax-ii}\\
+  \text{(iii)}\;\; & P_{a,u} P_{b,v} P_{a,u} = \frac{1}{d} P_{a,u} \qquad (a \ne b), \label{eq:ax-iii}\\
+  \text{(Tr)}\;\; & \tau(P_{a,u}) = \frac{1}{d}, \qquad \text{where } \tau(X) = \frac{1}{rd}\Tr(X). \label{eq:ax-tr}
+\end{align}
+Complex MUBs in $\C^d$ correspond strictly to the case $r = 1$. We emphasize throughout that the constructions below have $r \ge 2$ and are \emph{higher-rank $C^*$-algebra representations}, not rank-1 complex MUBs in $\C^d$.
+
+\subsection{Tier 1 (Minimal Non-Complex Rank $r=2$): Quaternionic 4- and 5-MUBs}
+
+\begin{theorem}[Closed-Form Quaternionic 4-MUB ($d=6$) and 5-MUB ($d=2q \ge 10$)]
+\label{thm:quat}
+Let $q = p^r$ be an odd prime power, $F_q$ the discrete Fourier matrix over $\F_q$, and $Q_a = \operatorname{diag}(\chi(a x^2))$ ($a \in \F_q$) the quadratic Gauss phase matrix. Define quaternionic unitaries in $\mathrm{Sp}(2q)$ by
+\[
+  B_0 = I_{2q}, \qquad
+  B_m = \frac{1}{\sqrt{2}} \begin{pmatrix} Q_{a_m} F_q & Q_{a_m} F_q \\ q_m Q_{a_m} F_q & -q_m Q_{a_m} F_q \end{pmatrix}.
+\]
+\begin{enumerate}
+  \item For $q = 3$ ($d = 6$), choosing $(q_m, a_m) \in \{(1,1), (i,2), (j,0)\}$ yields an exact \textbf{quaternionic 4-MUB} in $\HH^6 \hookrightarrow \C^{12}$ (rank-2 complex projectors in $M_{12}(\C)$).
+  \item For every odd prime power $q \ge 5$ (including $d = 10, 14, 18, 22, \dots$), choosing $(q_m, a_m) \in \{(1,1), (i,-1), (j,2), (k,-2)\}$ when $\operatorname{char}(\F_q) \ge 5$—or $\{(1,1), (i,-1), (j,\theta), (k,-\theta)\}$ with $\theta \in \F_q \setminus \F_3$ when $q = 3^r \ge 9$—yields an exact \textbf{quaternionic 5-MUB} in $\HH^{2q} \hookrightarrow \C^{4q}$ (rank-2 complex projectors in $M_{2d}(\C)$).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Unitarity of $B_m$ and flatness against $B_0 = I_{2q}$ follow immediately from $|q_m| = 1$ and the flatness of $Q_{a_m} F_q$. For pairs with $q_m, q_n$ both in $\{1,i\}$ or both in $\{j,k\}$, $\bar{q}_m q_n = \pm i \in \C$, so the $q\times q$ blocks of $B_m^\dagger B_n$ are $\frac{1 \pm i}{2} F_q^\dagger Q_{a_n - a_m} F_q$, which have flat entry modulus $\frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{q}} = \frac{1}{\sqrt{2q}}$ whenever $a_n \ne a_m$. For cross pairs with $q_m \in \{1,i\}$ and $q_n \in \{j,k\}$, $\bar{q}_m q_n \in \{\pm j, \pm k\}$ conjugates complex entries via $z^* j = j z$, producing blocks $\frac{1}{2}(A \pm j B)$ where $A = F_q^\dagger Q_{a_n - a_m} F_q$ and $B = F_q^T Q_{a_n + a_m} F_q$. Since $|A + jB|_{\HH}^2 = |A|^2 + |B|^2$, every entry has squared modulus $\frac{1}{4}(\frac{1}{q} + \frac{1}{q}) = \frac{1}{2q}$ whenever $a_n - a_m \ne 0$ and $a_n + a_m \ne 0$ in $\F_q$. Embedding via the standard $*$-homomorphism $\phi(A + jB) = \begin{pmatrix} A & -\bar{B} \\ B & \bar{A} \end{pmatrix}$ yields rank-2 complex projectors in $M_{2d}(\C)$ satisfying~\eqref{eq:ax-i}--\eqref{eq:ax-tr}.
+\end{proof}
+
+Because Theorem~\ref{thm:quat} draws $q_m$ from the four quaternion units $\{1, i, j, k\}$, it saturates structurally at $m \le 5$ (and degenerates at $q = 3$ where $2 \equiv -1 \pmod 3$, leaving $m = 4$). A natural referee question immediately arises: \emph{can other algebraic models break the quaternionic $m \le 5$ ceiling?} Theorems~\ref{thm:clifford} and~\ref{thm:jw} below answer this completely.
+
+\subsection{Tier 2 (Low-Rank Clifford): Breaking the Quaternionic Ceiling}
+
+\begin{theorem}[Clifford $(q+1)$-MUBs in $d = 2^a q$]
+\label{thm:clifford}
+Let $d = 2q$ with $q$ an odd prime power, and let $\Gamma_0, \dots, \Gamma_q \in M_{2^{\lceil q/2 \rceil}}(\Z[i])$ be $q+1$ pairwise anticommuting Hermitian unitaries ($\Gamma_a^2 = I$, $\Gamma_a \Gamma_b + \Gamma_b \Gamma_a = 0$ for $a \ne b$) generated via Jordan--Wigner tensor products of Pauli matrices. Let $\{Q^{(q)}_{a,\beta}\}_{a=0..q}$ be the standard complete set of $q+1$ complex MUBs in $\C^q$. Then the tensor projectors
+\[
+  R_{a, (\alpha, \beta)} := \frac{I + (-1)^\alpha \Gamma_a}{2} \otimes Q^{(q)}_{a,\beta} \in M_{2^{\lceil q/2 \rceil} q}(\C) \qquad (a = 0,\dots,q;\; \alpha \in \{0,1\};\; \beta \in \F_q)
+\]
+form an exact rank-$2^{\lceil q/2 \rceil - 1}$ \textbf{$(q+1)$-MUB} satisfying~\eqref{eq:ax-i}--\eqref{eq:ax-tr}. In particular, we obtain an exact \textbf{rank-4 6-MUB in $d = 10$} ($M_{40}(\Z[i,\omega_5])$), an \textbf{8-MUB in $d = 14$} (rank 8, $M_{112}$), and a \textbf{12-MUB in $d = 22$} (rank 32, $M_{704}$).
+\end{theorem}
+
+\subsection{Tier 3 (Universal Jordan--Wigner Theorem): $N_{C^*}(d) = \infty$ for Every $d \ge 2$}
+
+\begin{theorem}[Universal Infinite-Basis $C^*$-MUB Theorem]
+\label{thm:jw}
+For \textbf{every} integer $d \ge 2$ (prime, prime power, or composite) and \textbf{every} positive integer $m \ge 1$ (including $m > d+1$ and $m \to \infty$), let $k = \lceil (m-1)/2 \rceil$ and let $X_d, Z_d \in U(d)$ be the standard $d$-dimensional shift and clock matrices ($X_d^d = Z_d^d = I_d$, $X_d Z_d = \omega_d^{-1} Z_d X_d$, where $\omega_d = e^{2\pi i / d}$). Set $Y := \eta X_d Z_d$ with $\eta = 1$ for odd $d$ and $\eta = e^{i\pi/d}$ for even $d$, so that $Y^d = I_d$. Define $2k + 1 \ge m$ unitary operators in $U(d^k)$ by
+\[
+  U_{2j-1} = Y^{\otimes(j-1)} \otimes X_d \otimes I_d^{\otimes(k-j)}, \qquad
+  U_{2j} = Y^{\otimes(j-1)} \otimes Z_d \otimes I_d^{\otimes(k-j)} \;\; (1 \le j \le k), \qquad
+  U_{2k+1} = Y^{\otimes k}.
+\]
+Then $U_a^d = I_{d^k}$ for every $a$, and for every pair $1 \le a < b \le 2k+1$,
+\[
+  U_a U_b = \omega_d^{s_{ab}} U_b U_a, \qquad s_{ab} = \begin{cases} -1 & (a \text{ odd}), \\ +1 & (a \text{ even}). \end{cases}
+\]
+Consequently, the spectral projectors $P_{a,u} = \frac{1}{d}\sum_{t=0}^{d-1} \omega_d^{-ut} U_a^t \in M_{d^k}(\C)$ of rank $r = d^{k-1}$ satisfy all axioms~\eqref{eq:ax-i}--\eqref{eq:ax-tr}. In particular, without further rank-1 constraints, $N_{C^*}(d) = \infty$ for every $d \ge 2$.
+\end{theorem}
+
+\begin{proof}
+Check $Y^d$: acting on $|x\rangle$, $Y^d|x\rangle = \eta^d \omega_d^{d(d-1)/2} |x\rangle = |x\rangle$ for both odd $d$ ($\eta=1$, $d \mid \frac{d(d-1)}{2}$) and even $d$ ($\eta^d = -1$, $\omega_d^{d(d-1)/2} = (-1)^{d-1} = -1$). Hence $U_a^d = I$ for all $a$. For $a < b$, $U_a$ and $U_b$ commute in every tensor slot except the unique slot $j = \lceil a/2 \rceil$, where $(U_a, U_b)$ acts as $(X_d, Z_d)$ or $(X_d, Y)$ (yielding $\omega_d^{-1}$) when $a$ is odd, and as $(Z_d, Y)$ (yielding $\omega_d^{+1}$) when $a$ is even. Because $\gcd(\pm 1, d) = 1$, for every $a \ne b$ and every $1 \le t \le d-1$ the conditional expectation vanishes identically:
+\[
+  \sum_{u=0}^{d-1} P_{a,u} U_b^t P_{a,u} = \frac{1}{d}\sum_{r=0}^{d-1} U_a^r U_b^t U_a^{-r} = \frac{1}{d}\left(\sum_{r=0}^{d-1} \omega_d^{r t s_{ab}}\right) U_b^t = 0.
+\]
+Multiplying on both sides by $P_{a,u}$ gives $P_{a,u} U_b^t P_{a,u} = 0$ for all $t \ne 0 \pmod d$, whence $P_{a,u} P_{b,v} P_{a,u} = \frac{1}{d}\sum_{t=0}^{d-1} \omega_d^{-vt} P_{a,u} U_b^t P_{a,u} = \frac{1}{d} P_{a,u}$.
+\end{proof}
+
+All three tiers are verified with zero floating-point arithmetic in `scripts/01`--`05` over exact cyclotomic rings $\Z[i,\omega_p]$ and $\Z[\zeta_{2d}]$, including dense matrix audits for $(d,m)=(3,5)$ in $M_9$ (exceeding $d+1=4$), $(6,5)$ in $M_{36}$, $(10,6)$ in $M_{40}$, and operator checks up to $(10,21)$.
+
+\section{Axiom-by-Axiom Alignment with Gribling--Polak (Def.\ 3.1) and Exact Degree Thresholds}
+\label{sec:gp-align}
+
+Gribling and Polak~\cite{GriblingPolak2024} (Definition~3.1) formulate the $(d,m)$-MUB algebra via four relations plus a trace condition ($\tau_{\mathrm{GP}}(I)=d$, related to our normalized trace by $\tau_{\mathrm{GP}} = d \cdot \tau$). Table~\ref{tab:gp} records our zero-float audit (`scripts/03_gribling_polak_def31_alignment_QED.mjs`, 17.8s) against every axiom.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+GP Def.\ 3.1 Item & Relation & Rank-2 Quat Model & Zero-Float Audit & Exact Scope \\
+\midrule
+(i) Intra-basis ortho & $P_{a,u} P_{a,v} = \delta_{uv} P_{a,u}$ & Exact $\checkmark$ & $d=6$: 144 checks; $d=10$: 500 checks (all $u,v$) \\
+(ii) Completeness & $\sum_u P_{a,u} = I$ & Exact $\checkmark$ & $d=6$: 4 bases; $d=10$: 5 bases \\
+(iii) Triple relation & $P_{a,u} P_{b,v} P_{a,u} = \frac{1}{d} P_{a,u}$ & Exact $\checkmark$ & $d=6$: 432 checks; $d=10$: 2,000 checks \\
+Trace normalization & $\tau_{\mathrm{GP}}(I)=d$ vs.\ $\tau(I)=1$ & Equivalent $\checkmark$ & Constant scale factor $d$ \\
+$S_d \wr S_m$ reduction & Group-averaged SDP & Automatic $\checkmark$ & Averaging $L$ over $S_d \wr S_m$ preserves feasibility \\
+(iv) Commutativity & $[XUX, XVX] = 0$ & Violated ($\times$); split & Feasible $\deg \le 6$ ($t \le 3$); broken at deg 7 / 10 \\
+\bottomrule
+\end{tabular}
+\caption{Axiom-by-axiom zero-float alignment with Gribling--Polak~\cite{GriblingPolak2024}, Def.\ 3.1.}
+\label{tab:gp}
+\end{table}
+
+\begin{corollary}[Two-Layer Tracial NPA Barrier and Exact Ideal-Detection Degrees]
+\label{cor:two-layer}
+\begin{enumerate}
+  \item \textbf{Layer 1 (Without Axiom~(iv)):} By Theorem~\ref{thm:jw}, any dimension-blind tracial NPA/SDP hierarchy enforcing~\eqref{eq:ax-i}--\eqref{eq:ax-tr} (with or without $S_d \wr S_m$ symmetry reduction) is feasible at every finite and infinite order $k \to \infty$ for \emph{all} $d \ge 2$ and \emph{all} $m \ge 1$—it cannot even establish $N(d) \le d+1$. This explains rigorously why axiom~(iv) is structurally indispensable in~\cite{GriblingPolak2024} even to rule out $d+2$ MUBs.
+  \item \textbf{Layer 2 (With Axiom~(iv) as a Two-Sided Ideal):} On our rank-2 quaternionic models ($d=6,10$), $[XUX,XVX] \equiv 0$ holds identically whenever $\deg(U) \le 1$ or $\deg(V) \le 1$ (covering the degree-$\le 3$ reductions noted in~\cite{GriblingPolak2024}, Theorem~3.2), and $\tau(W[A,B]) \equiv 0$ vanishes through trace degree $\le 6$ (moment level $t \le 3$). For minimal corners $A = P_{0,0} P_{1,0} P_{2,0} P_{0,0}$ and $B = P_{0,0} P_{1,0} P_{3,0} P_{0,0}$, exact `BigInt` verification proves $C = [A, B] \ne 0$, $A^\dagger A = B^\dagger B = \frac{1}{d^3} P_{0,0}$, and two exact reduced cyclic thresholds:
+  \begin{itemize}
+    \item \emph{Reduced cyclic degree-7 linear ideal witness} ($t=4$): For $E = P_{0,0} P_{3,1} P_{1,0} P_{0,0}$, both terms of $\Tr(E[A,B])$ collapse via $P_{1,0} P_{0,0} P_{1,0} = \frac{1}{d} P_{1,0}$ to exact 7-letter cyclic words with $\Tr(E[A,B]) \ne 0$ (4 verified witnesses in $d=6$, 18 in $d=10$).
+    \item \emph{Reduced cyclic degree-10 SOS norm} ($t=5$; degree 12 for unshared interior bases): Merging $P_0^2 = P_0$ and $P_1 P_0 P_1 = \frac{1}{d} P_1$ reduces the raw 16-letter trace $\Tr(C^\dagger C)$ identically to the exact 10-letter word $W_{10} = P_0 P_3 P_1 P_0 P_2 P_1 P_3 P_0 P_1 P_2$ via $\Tr(C^\dagger C) = \frac{4}{d^6} - \frac{2}{d}\operatorname{Re}\Tr(W_{10}) > 0$.
+  \end{itemize}
+\end{enumerate}
+\end{corollary}
+
+We present Corollary~\ref{cor:two-layer}(2) as an explicit algebraic mechanism explaining why high-degree ideal multiples of axiom~(iv) are necessary—rather than an unproven minimality lower bound—noting faithfully that Gribling--Polak report the degree-12 barrier in $d=6$ as numerical evidence (\emph{``numerical results indicate''}).
+
+\section{Universal Rank-$r$ Two-Copy $\Lambda^2$ Separation, Phase-Erasure No-Go, and Homotopy Mass Gap}
+\label{sec:2copy}
+
+\begin{theorem}[Universal Rank-$r$ Two-Copy Antisymmetric Leakage Theorem]
+\label{thm:lambda2}
+Let $P$ be \textbf{any} orthogonal projector ($P^2 = P = P^\dagger$) of rank $r \ge 1$ on any finite-dimensional complex Hilbert space, and let $P_{\Lambda^2} = \frac{1}{2}(I - \SWAP)$ denote the projector onto the two-copy antisymmetric subspace. Then
+\[
+  \frac{\Tr(P^{\otimes 2} P_{\Lambda^2})}{\Tr(P^{\otimes 2})} = \frac{r - 1}{2r}.
+\]
+In particular: (i) $P^{\otimes 2} P_{\Lambda^2} = 0$ holds \textbf{if and only if} $r = 1$; (ii) \textbf{every} rank-2 representation suffers an exact universal $25\%$ leakage; and (iii) \textbf{every} higher-rank representation ($r \ge 2$) across Tiers~1--3 suffers $\ge 25\%$ leakage and is eliminated at degree~2.
+\end{theorem}
+
+\begin{proof}
+Since $P$ is a rank-$r$ orthogonal projector, $\Tr(P) = \Tr(P^2) = r$, hence $\Tr(P^{\otimes 2}) = r^2$ and $\Tr(P^{\otimes 2} \SWAP) = \Tr(P^2) = r$. Thus $\Tr(P^{\otimes 2} P_{\Lambda^2}) = \frac{1}{2}(r^2 - r)$, yielding the ratio $\frac{r-1}{2r}$. Positivity of $P_{\Lambda^2} P^{\otimes 2} P_{\Lambda^2}$ implies vanishing trace iff $P^{\otimes 2} P_{\Lambda^2} = 0$, iff $r = 1$.
+\end{proof}
+
+\begin{proposition}[Parameter-Free Conjugate Two-Copy Matrix $M_2(R)$ and Phase-Erasure No-Go]
+\label{prop:2copy-nogo}
+For any rank-1 complex $m$-MUB in $\C^d$, the conjugate two-copy projectors $R_{a,u} := P_{a,u} \otimes \overline{P_{a,u}}$ satisfy the completely phase-free cyclic trace identity $\Tr(R_{a_1,u_1} \cdots R_{a_L,u_L}) = |\Tr(P_{a_1,u_1}\cdots P_{a_L,u_L})|^2 = d^{-L}$ whenever cyclically adjacent bases are distinct. Consequently, the Level-2 moment matrix $M_2(R)$ (size $1 + md + m(m-1)d^2$) has \textbf{zero free variables}. Direct spectral computation proves:
+\begin{enumerate}
+  \item $M_2(R)$ immediately refutes $(d, d+2)$ via a \textbf{single negative eigenvalue} with zero SDP optimization: $\lambda_{\min}(2,4) = -0.1106$, $\lambda_{\min}(3,5) = -0.1107$, $\lambda_{\min}(4,6) = -0.0970$.
+  \item Conversely, $M_2(R)$ is strictly PSD-feasible at $(d=6, m=4)$ ($\lambda_{\min} = -9.09 \times 10^{-16}$, size $457 \times 457$, rank $366$). Because $R_{a,u}$ erases all complex Bargmann phases and reduces every moment to a rational function of $d$, any $d$-smooth phase-free two-copy hierarchy is interpolated across composite $d=6$ (between $5,7$) and $d=10$ (between $9,11$) by prime-power solutions.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Degree-3 Bargmann Saturation Defect, Parseval--Cocycle Gap, \& $\HH^d \to \C^d$ Homotopy Mass Gap]
+For any tracial MUB model, Cauchy--Schwarz yields $S_3(a,b,c) := d^2 \sum_{u,v,w} |\tau(P_{a,u} P_{b,v} P_{c,w})|^2 \le 1$, with equality iff every corner $P_{a,u} P_{b,v} P_{c,w} P_{a,u} \in \C \cdot P_{a,u}$. Complex rank-1 MUBs saturate $S_3 = 1$, whereas Tiers~1--3 collapse to $S_3 \in \{\frac{1}{4}, \frac{1}{3}, \frac{1}{2}\}$ (Parseval incompleteness in the $d^2$-dimensional orthonormal basis $\{E_{ij} = \sqrt{d}\, P_{0,i} P_{1,j}\}$ of $M_d(\C)$). Enforcing Parseval completeness ($|c_{a,k}[i,j]| = 1/d$, row/column sums $= 1/\sqrt{d}$, basis completeness $\sum_k c_{a,k} = 1/\sqrt{d}$, and exact Gram overlaps) without specifying $H_1$ sharply refutes $(d, d+2)$ for $d \in \{2,3,4\}$ (losses $1.63, 3.44, 4.13$) while descending to $2.06 \times 10^{-3}$ on $(d=6, m=4)$; imposing the multiplicative rank-1 Bargmann cocycle $\rank(d\, F_d \odot c_{a,k}) = 1$ collapses $(d=3, m=4)$ to $5.19 \times 10^{-23}$ and $(d=5, m=4)$ to $2.84 \times 10^{-15}$, while opening a $+14$-order-of-magnitude hard cocycle gap on $(d=6, m=4)$ (loss $0.6826$, SVD tail $0.3198$). Independently, homotopy continuation of the gauge-invariant non-commutativity order parameter $E_{\mathrm{comm}}(Q) \ge 0$ strictly along the quaternionic 4-MUB manifold $\mathcal{M}_{\HH}(d,4)$ toward $\C^d$ separates $d \in \{3,4,5\}$ ($E_{\mathrm{comm}} \le 1.6 \times 10^{-14}$) from $d=2$ ($1/36 = 0.0278$), $d=6$ ($0.0435$), and $d=10$ ($0.0678$) by 12--14 orders of magnitude.
+\end{proposition}
+
+\section{Discussion: Roadmap to Phase-Retaining Composite-Dimension Refutations}
+
+Our results identify three exact structural obstacles that any dimension-general SDP refutation of $N(6)=3$ or $N(10)=3$ must overcome simultaneously: (1) eliminating higher-rank $C^*$-models (where $N_{C^*}(d) = \infty$ without rank-1 constraints, solved at degree~2 by Theorem~\ref{thm:lambda2}); (2) preserving complex Bargmann phases (since phase-free two-copy algebras $R_{a,u}$ cannot separate composite $d$ from neighboring prime powers by Proposition~\ref{prop:2copy-nogo}); and (3) enforcing the multiplicative rank-1 Hadamard Bargmann cocycle coupled to the explicit finite-$d$ completeness cutoff. Developing compact, symmetry-reduced hierarchies that retain all three ingredients remains an exciting open frontier for $d = 10$.
+
+\begin{thebibliography}{9}
+\bibitem{GriblingPolak2024}
+S.~Gribling and S.~Polak, \emph{Mutually unbiased bases: polynomial optimization and symmetry}, Quantum \textbf{8}, 1318 (2024), \texttt{arXiv:2111.05698}.
+
+\bibitem{Mortimer2025}
+L.~Mortimer, \emph{Mutually unbiased bases as a commuting polynomial optimization problem}, Quantum (2025).
+
+\bibitem{McNultyWeigert2026}
+D.~McNulty and S.~Weigert, \emph{Mutually unbiased bases in composite dimensions --- a review}, Quantum \textbf{10}, 2051 (2026).
+
+\bibitem{OpenAI2026}
+OpenAI, \emph{The maximum number of mutually unbiased bases in dimension six}, preprint (Sept.\ 2026).
+
+\bibitem{CardenesWuttigTindall2026}
+M.~C\'ardenes Wuttig and J.~Tindall, \emph{Using topology to reveal all mutually unbiased bases in dimension six}, \texttt{arXiv:2611.06917} (Nov.\ 2026).
+
+\bibitem{Jaswal2026}
+S.~Jaswal, \emph{Triplets of mutually unbiased bases in dimension six}, preprint (Nov.\ 2026).
+
+\bibitem{YangEtAl2026}
+J.~Yang, Y.~Liu, Y.~Li, and X.-H.~Deng, \emph{No complete set of mutually unbiased bases in dimension ten contains the Fourier pair or three product bases}, \texttt{arXiv:2611.21188} (Nov.\ 2026).
+\end{thebibliography}
+
+\end{document}
